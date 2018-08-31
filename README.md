@@ -20,7 +20,7 @@ The explanation of the files
 
 * [FFB.m](https://github.com/bijiuni/CT_reconstruction/blob/master/FFB.m) - Implementation of the Fourier Filtered Backprojection method
 * [main.m](https://github.com/bijiuni/CT_reconstruction/blob/master/main.m) - The main program to perform the reconstruction
-* [fam_beam_compare.m](https://github.com/bijiuni/CT_reconstruction/blob/master/fan_beam_compare.m) - Compare the performance of pencil-beam and fan-beam
+* [fan_beam_compare.m](https://github.com/bijiuni/CT_reconstruction/blob/master/fan_beam_compare.m) - Compare the performance of pencil-beam and fan-beam
 * [own_radon.m](https://github.com/bijiuni/CT_reconstruction/blob/master/own_radon.m) - Realizing radon transform without using built-in fuction
 
 
