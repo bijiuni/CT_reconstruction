@@ -25,7 +25,7 @@ The explanation of the files
 
 ## Authors
 
-**For much more detailed results please refer the PDF results**
+**For much more detailed results please refer the PDF file**
 
 ![Result sample 1](https://github.com/bijiuni/CT_reconstruction/blob/master/sample1.PNG)
 ![Result sample 2](https://github.com/bijiuni/CT_reconstruction/blob/master/sample2.PNG)
