@@ -27,9 +27,9 @@ The explanation of the files
 
 **For much more detailed results please refer the PDF results**
 
-![Result sample 1] (https://github.com/bijiuni/CT_reconstruction/blob/master/sample1.PNG)
-![Result sample 2] (https://github.com/bijiuni/CT_reconstruction/blob/master/sample2.PNG)
-![Result sample 3] (https://github.com/bijiuni/CT_reconstruction/blob/master/sample3.PNG)
+![Result sample 1](https://github.com/bijiuni/CT_reconstruction/blob/master/sample1.PNG)
+![Result sample 2](https://github.com/bijiuni/CT_reconstruction/blob/master/sample2.PNG)
+![Result sample 3](https://github.com/bijiuni/CT_reconstruction/blob/master/sample3.PNG)
 
 
 ## Authors
