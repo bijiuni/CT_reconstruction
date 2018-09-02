@@ -23,6 +23,14 @@ The explanation of the files
 * [fan_beam_compare.m](https://github.com/bijiuni/CT_reconstruction/blob/master/fan_beam_compare.m) - Compare the performance of pencil-beam and fan-beam
 * [own_radon.m](https://github.com/bijiuni/CT_reconstruction/blob/master/own_radon.m) - Realizing radon transform without using built-in fuction
 
+## Authors
+
+**For much more detailed results please refer the PDF results**
+
+![Result sample 1] (https://github.com/bijiuni/CT_reconstruction/blob/master/sample1.PNG)
+![Result sample 2] (https://github.com/bijiuni/CT_reconstruction/blob/master/sample2.PNG)
+![Result sample 3] (https://github.com/bijiuni/CT_reconstruction/blob/master/sample3.PNG)
+
 
 ## Authors
 
