@@ -34,7 +34,7 @@ The explanation of the files
 
 ## Authors
 
-* **Zach Lyu** - *Code Writing*
+* **Zach Lyu** - *Software development*
 
 
 ## Acknowledgments
