@@ -56,20 +56,82 @@ The function has six parameters. It takes in the original phantom, perform radon
 %}
 ```
 
+### own_radon
+
+Realizing radon transform without using built-in fuction
+
+```
+function processed_img = own_radon(img, theta) 
+```
+
+### main
+
+* Create a phantom image
+* Calling the FFB function with specific parameters
+* Calculate the SSIM and MSE of the reconstruction to evaluate the process
+* Plot the result for analysis
+
 
 ## Sample results
 
-**For detailed results please refer the PDF file**
+**For detailed results please refer the [Report](https://github.com/bijiuni/CT_reconstruction/blob/master/CT%20Reconstruction%20using%20Fourier%20Filtered%20Backprojection.pdf)**
 
-![Result sample 1](https://github.com/bijiuni/CT_reconstruction/blob/master/sample1.PNG)
-![Result sample 2](https://github.com/bijiuni/CT_reconstruction/blob/master/sample2.PNG)
-![Result sample 3](https://github.com/bijiuni/CT_reconstruction/blob/master/sample3.PNG)
+
+### Effect of Sampling
+
+When the sampling interval decreases, the SSIM value increases and the MSE value decreases.
+This is intuitively true as for a single point, more projection means that the sum of
+backprojection is closer to the complete integral.
+![Result sample 4](https://github.com/bijiuni/CT_reconstruction/blob/master/img/sample4.jpg)
+
+### Effect of filters
+
+From the graph, it can be deduced that the image with the Bartlett-Hanning filter has the lowest MSE and highest
+SSIM, showing it has the best image quality. On the other hand, the Barlett filtered image has the
+lowest SSIM while the MSE is comparable to the other values, thus, having the worst image
+quality.
+![Result sample 5](https://github.com/bijiuni/CT_reconstruction/blob/master/img/sample5.PNG)
+![Result sample 2](https://github.com/bijiuni/CT_reconstruction/blob/master/img/sample2.PNG)
+
+
+### Noise Propagation
+
+When noise is added to left-half or right-half of the radon
+transform, the influence seems to be
+universal, or at least distributed evenly in the whole picture. The noise added to one half of the
+radon transform exists in half of the projections, since R has a shape of (number of detectors,
+number of angles). The noise in the final reconstruction is distributed evenly. This is because any
+projection selected affects all the point reconstruction in the process of backprojection.
+
+
+The reconstruction shows distinct features in the upper-half and
+lower-half parts when we add noise to the upper half or lower half of the radon transform. We
+are essentially adding noise to one half of the detectors’ data. For a certain point in an image, most of its
+projection will be detected by one half of the detectors only.
+
+![Result sample 7](https://github.com/bijiuni/CT_reconstruction/blob/master/img/sample7.jpg)
+
+### Effect of missing projection
+
+![Result sample 8](https://github.com/bijiuni/CT_reconstruction/blob/master/img/sample8.jpg)
+
+### Effect of missing detectors
+
+![Result sample 3](https://github.com/bijiuni/CT_reconstruction/blob/master/img/sample3.PNG)
+
+
+### Effect of Gaussian noise in radon domain
+
+![Result sample 6](https://github.com/bijiuni/CT_reconstruction/blob/master/img/sample6.jpg)
+
+### Fan-beam and Pencil-beam
+
+![Result sample 9](https://github.com/bijiuni/CT_reconstruction/blob/master/img/sample9.jpg)
 
 
 ## Authors
 
-* **Zach Lyu** - *Software development*
-
+* **Zach Lyu** *
 
 ## Acknowledgments
 
