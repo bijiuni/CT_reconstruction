@@ -162,7 +162,7 @@ We can see that the two projections are close to each other in terms of values a
 
 ## Authors
 
-* **Zach Lyu** *
+* **Zach Lyu** 
 
 ## Acknowledgments
 
