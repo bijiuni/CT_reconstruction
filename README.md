@@ -30,7 +30,7 @@ Overview of the files
 ## Explanations
 
 
-## FFB function
+### FFB function
 ```
 function final_img = FFB(phantom_img, filter_type, dtheta, coe_transform, cut_off, interpolation)
 ```
@@ -46,13 +46,13 @@ The function has six parameters. It takes in the original phantom, perform radon
 	 %@param filter_type
 	         %string, can either be none, ramlak, shepplogan, hamming, or lowpasscosine
 	 %@param dtheta
-           %interval betwen projection angles, in degrees
-   %@param coe_transform
-           %a coefficient adjusting the size of the Fourier Transform
-   %@param cut_off
-           %the cut off ratio for the filters, values larger than width*cut_off are set to zeroes
-   %@param interpolation
-           %interpolation method, can either be linear or nearest
+           	 %interval betwen projection angles, in degrees
+   	 %@param coe_transform
+           	 %a coefficient adjusting the size of the Fourier Transform
+   	 %@param cut_off
+           	 %the cut off ratio for the filters, values larger than width*cut_off are set to zeroes
+   	 %@param interpolation
+           	 %interpolation method, can either be linear or nearest
 %}
 ```
 
