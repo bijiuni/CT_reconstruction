@@ -90,7 +90,7 @@ From the graph, it can be deduced that the image with the Bartlett-Hanning filte
 SSIM, showing it has the best image quality. On the other hand, the Barlett filtered image has the
 lowest SSIM while the MSE is comparable to the other values, thus, having the worst image
 quality.
-![Result sample 5](https://github.com/bijiuni/CT_reconstruction/blob/master/img/sample5.PNG)
+![Result sample 5](https://github.com/bijiuni/CT_reconstruction/blob/master/img/sample5.JPG)
 ![Result sample 2](https://github.com/bijiuni/CT_reconstruction/blob/master/img/sample2.PNG)
 
 
@@ -109,11 +109,11 @@ lower-half parts when we add noise to the upper half or lower half of the radon 
 are essentially adding noise to one half of the detectors’ data. For a certain point in an image, most of its
 projection will be detected by one half of the detectors only.
 
-![Result sample 7](https://github.com/bijiuni/CT_reconstruction/blob/master/img/sample7.jpg)
+![Result sample 7](https://github.com/bijiuni/CT_reconstruction/blob/master/img/sample7.JPG)
 
 ### Effect of missing projection
 
-![Result sample 8](https://github.com/bijiuni/CT_reconstruction/blob/master/img/sample8.jpg)
+![Result sample 8](https://github.com/bijiuni/CT_reconstruction/blob/master/img/sample8.JPG)
 
 ### Effect of missing detectors
 
@@ -122,11 +122,11 @@ projection will be detected by one half of the detectors only.
 
 ### Effect of Gaussian noise in radon domain
 
-![Result sample 6](https://github.com/bijiuni/CT_reconstruction/blob/master/img/sample6.jpg)
+![Result sample 6](https://github.com/bijiuni/CT_reconstruction/blob/master/img/sample6.JPG)
 
 ### Fan-beam and Pencil-beam
 
-![Result sample 9](https://github.com/bijiuni/CT_reconstruction/blob/master/img/sample9.jpg)
+![Result sample 9](https://github.com/bijiuni/CT_reconstruction/blob/master/img/sample9.JPG)
 
 
 ## Authors
