@@ -1,4 +1,7 @@
 # CT Reconstruction using Fourier Filtered Backprojection
+ 
+ 
+## Overview
 
 Tomography is a technique to investigate the structure and composition of an object
 non-invasively, along spatial and temporal dimensions using photonic radiation, acoustic or
@@ -14,18 +17,49 @@ effects of sampling, missing projection, filtering, noise and other artifacts on
 analyzed and discussed briefly.
 
 
-### Files
+## Files
 
-The explanation of the files
+Overview of the files
 
 * [FFB.m](https://github.com/bijiuni/CT_reconstruction/blob/master/FFB.m) - Implementation of the Fourier Filtered Backprojection method
 * [main.m](https://github.com/bijiuni/CT_reconstruction/blob/master/main.m) - The main program to perform the reconstruction
 * [fan_beam_compare.m](https://github.com/bijiuni/CT_reconstruction/blob/master/fan_beam_compare.m) - Compare the performance of pencil-beam and fan-beam
 * [own_radon.m](https://github.com/bijiuni/CT_reconstruction/blob/master/own_radon.m) - Realizing radon transform without using built-in fuction
 
-## Authors
 
-**For much more detailed results please refer the PDF file**
+## Explanations
+
+
+## FFB function
+```
+function final_img = FFB(phantom_img, filter_type, dtheta, coe_transform, cut_off, interpolation)
+```
+
+
+The function has six parameters. It takes in the original phantom, perform radon transform, and output the reconstructed image
+
+```
+%{ Implementation of the Fourier Filtered Backprojection method
+	 
+	 %@param phantom_img
+	         %the original image
+	 %@param filter_type
+	         %string, can either be none, ramlak, shepplogan, hamming, or lowpasscosine
+	 %@param dtheta
+           %interval betwen projection angles, in degrees
+   %@param coe_transform
+           %a coefficient adjusting the size of the Fourier Transform
+   %@param cut_off
+           %the cut off ratio for the filters, values larger than width*cut_off are set to zeroes
+   %@param interpolation
+           %interpolation method, can either be linear or nearest
+%}
+```
+
+
+## Sample results
+
+**For detailed results please refer the PDF file**
 
 ![Result sample 1](https://github.com/bijiuni/CT_reconstruction/blob/master/sample1.PNG)
 ![Result sample 2](https://github.com/bijiuni/CT_reconstruction/blob/master/sample2.PNG)
