@@ -1,3 +1,19 @@
+%{ Implementation of the Fourier Filtered Backprojection method
+	 
+	 @param phantom_img
+	         the original image
+	 @param filter_type
+	         string, can either be none, ramlak, shepplogan, hamming, or lowpasscosine
+	 @param dtheta
+             interval betwen projection angles, in degrees
+     @param coe_transform
+             a coefficient adjusting the size of the Fourier Transform
+     @param cut_off
+             the cut off ratio for the filters, values larger than width*cut_off are set to zeroes
+     @param interpolation
+             interpolation method, can either be linear or nearest
+%}
+
 function final_img = FFB(phantom_img, filter_type, dtheta, coe_transform, cut_off, interpolation)
     P = phantom_img;    %Load the phantom
 
@@ -64,6 +80,7 @@ function final_img = FFB(phantom_img, filter_type, dtheta, coe_transform, cut_of
                 end
             end
          end
+         
     elseif(strcmp(interpolation,'nearest')==1)
         for iprog=1:num_angles
             G = inverse_f(:, iprog);
