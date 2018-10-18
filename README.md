@@ -113,18 +113,49 @@ projection will be detected by one half of the detectors only.
 
 ### Effect of missing projection
 
+For the SSIM, it can be seen that the value drop
+dramatically when the no. of missing projection increase from 1 to 25, and start flattening after
+that. This indicate that the image quality compared to the original phantom will decrease at first
+and no longer decrease when the no. of missing projection is large. However, in terms of the
+MSE, the value surprisingly drops when the no. of missing projection increases, which is
+contradict to the real case. It could be possibly due to the scaling factor that used for every
+reconstruction. This scaling factor is strongly related to the number of projection we used. When
+there are missing projection, the decrease in projection is unconventional in real cases, which do
+not take into account by the reconstruction. And because MSE is strongly depends on the
+intensity scaling, therefore the abnormal results happened. This can also be shown that the SSIM
+is a better evaluation than MSE here.
+
 ![Result sample 8](https://github.com/bijiuni/CT_reconstruction/blob/master/img/sample8.JPG)
 
 ### Effect of missing detectors
+
+The results show that the image quality drop in the similar way as the
+effect of missing projection do. From quantify statistics, the SSIM of the image drop rapidly on
+first two sets of no. of missing detector and start flattening afterwards. On the other hand, the
+value of MSE increase rapidly from 1 to 50 missing detectors and start to slow down afterward.
 
 ![Result sample 3](https://github.com/bijiuni/CT_reconstruction/blob/master/img/sample3.PNG)
 
 
 ### Effect of Gaussian noise in radon domain
 
+Gaussian noise has a normal distribution in the time domain, and white noise is a random signal
+having equal intensity at different frequencies. Therefore, Gaussian white noise should be the
+most popular noise in the detection process if there are no big defects in the detector.
+Different degree of Gaussian noise was added in the Radon space to analog the noise generated
+in the detection process. Sampling interval of 0.1 degree and the ramlak filter (coefficient of
+transform=5, cut off frequency=0.5) were used reconstruct all images under the same conditions.
+The results are shown below.
+
 ![Result sample 6](https://github.com/bijiuni/CT_reconstruction/blob/master/img/sample6.JPG)
 
 ### Fan-beam and Pencil-beam
+
+In order to ensure that our project has practical meaning, we compared the projections of the
+phantom using pencil-beam and fan-beam respectively. The two sets of projection data was
+obtained by using MATLAB radon and fanbeam functions. Two angles of 45 degrees and 90
+degrees were sampled and values in radon domain for different detectors were plotted as below.
+We can see that the two projections are close to each other in terms of values and shape.
 
 ![Result sample 9](https://github.com/bijiuni/CT_reconstruction/blob/master/img/sample9.JPG)
 
