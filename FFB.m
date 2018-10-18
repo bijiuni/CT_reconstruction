@@ -1,17 +1,17 @@
 %{ Implementation of the Fourier Filtered Backprojection method
 	 
-	 @param phantom_img
-	         the original image
-	 @param filter_type
-	         string, can either be none, ramlak, shepplogan, hamming, or lowpasscosine
-	 @param dtheta
-             interval betwen projection angles, in degrees
-     @param coe_transform
-             a coefficient adjusting the size of the Fourier Transform
-     @param cut_off
-             the cut off ratio for the filters, values larger than width*cut_off are set to zeroes
-     @param interpolation
-             interpolation method, can either be linear or nearest
+	 %@param phantom_img
+	         %the original image
+	 %@param filter_type
+	         %string, can either be none, ramlak, shepplogan, hamming, or lowpasscosine
+	 %@param dtheta
+                 %interval betwen projection angles, in degrees
+         %@param coe_transform
+                 %a coefficient adjusting the size of the Fourier Transform
+         %@param cut_off
+                 %the cut off ratio for the filters, values larger than width*cut_off are set to zeroes
+         %@param interpolation
+                 %interpolation method, can either be linear or nearest
 %}
 
 function final_img = FFB(phantom_img, filter_type, dtheta, coe_transform, cut_off, interpolation)
