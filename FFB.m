@@ -20,17 +20,17 @@ function final_img = FFB(phantom_img, filter_type, dtheta, coe_transform, cut_of
     [n_row, n_column] = size(P);
     theta = 0:dtheta:(180-dtheta);  % Set the projection angle
 
-    [R,xp] = radon(P,theta); %Perform radon transorm, Xp is a vector containing 
-    %the radial coordinates corresponding to each row of R
+    [R,xp] = radon(P,theta);            %Perform radon transorm, Xp is a vector containing 
+                                        %the radial coordinates corresponding to each row of R
 
     [num_detectors ,num_angles]  = size(R);
     xp_offset = abs(min(xp)) +1;
 
-    width = 2^nextpow2(num_detectors)*(2^coe_transform); %Get power of 2 for FFT
-                                       %at least large enough to fit a column of R
+    width = 2^nextpow2(num_detectors)*(2^coe_transform);                   %Get power of 2 for FFT
+                                                                           %at least large enough to fit a column of R
     proj_fft = fft(R, width);
     
-    ram_lak = 2*[0:(width/2-1), width/2:-1:1]'/width;
+    ram_lak = 2*[0:(width/2-1), width/2:-1:1]'/width;                %Apply the filter specified
     if (strcmp(filter_type,'none')==1)
         filter = ones(width, 1);
     elseif(strcmp(filter_type,'ramlak')==1)  %Ram-Lak
@@ -48,17 +48,17 @@ function final_img = FFB(phantom_img, filter_type, dtheta, coe_transform, cut_of
         filter = ram_lak .* Cosine';
     end
     
-    filter(width*cut_off:end)=0;
+    filter(width*cut_off:end)=0;              %Apply the threshold according to the cut-off ratio specified
 
     for w = 1:num_angles
         filtered(:, w) = proj_fft(:, w).*filter;
     end
 
-    inverse_f = real(ifft(filtered));
+    inverse_f = real(ifft(filtered));         %Inverse Fourier Transform
 
     final_img = zeros(n_row, n_column);
     
-    if (strcmp(interpolation,'linear')==1)
+    if (strcmp(interpolation,'linear')==1)        %Use linear interpolation method to calculate the values of the reconstruction image
         
          for iprog=1:num_angles
             G = inverse_f(:, iprog);
@@ -81,7 +81,9 @@ function final_img = FFB(phantom_img, filter_type, dtheta, coe_transform, cut_of
             end
          end
          
-    elseif(strcmp(interpolation,'nearest')==1)
+	 
+	 
+    elseif(strcmp(interpolation,'nearest')==1)    %Use nearest neighbor interpolation method to calculate the values of the reconstruction image
         for iprog=1:num_angles
             G = inverse_f(:, iprog);
             rad = theta(iprog)*pi/180;
